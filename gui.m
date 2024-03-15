@@ -2,7 +2,7 @@ function gui()
 
     Font = 10;
     %create and construct GUI well hidden%
-    gui = figure('Name', 'PetPal', 'Position', [100, 100, 350, 150]', ...
+    gui = figure('Name', 'PetPal', 'Position', [600, 600, 350, 150]', ...
         'Toolbar', 'none' , 'MenuBar', 'none', 'NumberTitle', 'off');
 
     %buttons that decide if user is owner or sitter
@@ -17,6 +17,6 @@ function gui()
     'FontSize', Font);
 
     %button is clicked if owner udate to owner gui if sitter switch to sitter gui 
-    set(owner, 'Callback', {@PetOwner, gui, owner, sitter});
-    set(sitter, 'Callback', {@PetSitter, gui ,owner, sitter});
+    set(owner, 'Callback', {@PetOwner, gui, owner, sitter, Font});
+    set(sitter, 'Callback', {@PetSitter, gui ,owner, sitter, Font});
 end
