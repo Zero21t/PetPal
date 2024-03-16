@@ -2,7 +2,7 @@ function gui()
 
     Font = 10;
     %create and construct GUI well hidden%
-    gui = figure('Name', 'PetPal', 'Position', [600, 600, 350, 150]', ...
+    gui = figure('Name', 'Pawsitive Partners', 'Position', [600, 600, 350, 150]', ...
         'Toolbar', 'none' , 'MenuBar', 'none', 'NumberTitle', 'off');
 
     %buttons that decide if user is owner or sitter

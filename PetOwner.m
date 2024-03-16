@@ -82,7 +82,8 @@ function PetOwner(~, ~, gui, owner, sitter, Font)
         'Units', 'normalized', ...
         'Position', [.55, .25, .25, .25], ...
         'FontSize', Font);
-    set(submit, 'Callback', {@Pet, gui});
+    set(submit, 'Callback', {@OwnerSave, gui, Name, Age, Address, City, Province, Country, PhoneNumber});
+
     
 
 end 
