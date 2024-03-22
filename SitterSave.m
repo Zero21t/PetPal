@@ -1,4 +1,4 @@
-function OwnerSave(~, ~, gui, Name, Age, Address, City, Province, Country, PhoneNumber)
+function SitterSave(~, ~, gui, Name, Age, Address, City, Province, Country, PhoneNumber)
     % Retrieve values from text boxes
     nameStr = get(Name, 'String');
     ageStr = get(Age, 'String');
@@ -17,5 +17,5 @@ function OwnerSave(~, ~, gui, Name, Age, Address, City, Province, Country, Phone
     % Add the collected data to a cell array
     collectedData = {nameStr, age, addressStr, cityStr, provinceStr, countryStr, phoneNumber};
     disp(collectedData)
-    Pet([], [], gui, collectedData);
+    PetRequest([], [], gui, collectedData);
 end
