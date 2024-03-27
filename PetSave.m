@@ -9,6 +9,6 @@ function PetSave(~, ~, gui, OwnerInfo, PetName, PetBreed, PetAge, PetBehaviour, 
     % Convert age to a number
     age = str2double(Age);
 
-    PetInfo = {Name, Breed, age, Behaviour, Genderm instructions};
-    SitterFinder([], [], gui,OwnerInfo, PetInfo)
+    PetInfo = {Name, Breed, age, Behaviour, Gender, instructions};
+    SitterFinder(gui, OwnerInfo, PetInfo)
 end

@@ -1,0 +1,39 @@
+function SitterFinder(gui, ownerinfo, petinfo)
+    % Database connection parameters
+    datasource = 'PetApp';   % Replace with your data source name
+    username = 'App';        % Replace with your MySQL username
+    password = '$St20040715';% Replace with your MySQL password
+  
+    % Connect to the database
+    conn = database(datasource, username, password);
+    
+    %sorting%
+    indices = [4,5,6];
+    ownermatching = ownerinfo(indices);
+
+    petindices = [2,3,4,5];
+    petmatches = petinfo(petindices);
+
+    Info = [ownermatching, petmatches];
+    disp(Info)
+
+    % Define your SQL query to retrieve relevant columns
+sqlQuery = ['SELECT city, province, country, Petbreed, PetAge, PetBehaviour, PetGender ' ...
+    'FROM Sitters'];
+data = fetch(conn, sqlQuery);
+
+% Load data into MATLAB
+city = data(:, 1); % Assuming column1 is the first column in the SQL result
+province = data(:, 2); % Assuming column2 is the second column in the SQL result
+country = data(:,3);
+breed = data(:,4);
+age = data(:,5);
+behaviour = data(:,6);
+Gender = data(:,3);
+
+% Define your cell array for comparison
+dataset = {city, province, country, breed, age, behaviour, Gender };
+disp(dataset);
+        
+       
+end
