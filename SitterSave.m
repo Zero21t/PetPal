@@ -15,7 +15,7 @@ function SitterSave(~, ~, gui, Name, Age, Address, City, Province, Country, Phon
     phoneNumber = phoneNumberStr;
 
     % Add the collected data to a cell array
-    collectedData = {nameStr, age, addressStr, cityStr, provinceStr, countryStr, phoneNumber};
-    disp(collectedData)
-    PetRequest([], [], gui, collectedData);
+    sitterInfo = {nameStr, age, addressStr, cityStr, provinceStr, countryStr, phoneNumber};
+    disp(sitterInfo)
+    PetRequest([], [], gui, sitterInfo);
 end

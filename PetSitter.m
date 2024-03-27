@@ -79,7 +79,7 @@ function PetSitter(~, ~, gui, owner, sitter, Font)
         'Units', 'normalized', ...
         'Position', [.25, .2, .25, .2], ...
         'FontSize', 16);
-    set(submit, 'Callback', {@SitterSave, gui, Name, Age, Address, City, Province, Country, PhoneNumber });
+    set(Next, 'Callback', {@SitterSave, gui, Name, Age, Address, City, Province, Country, PhoneNumber });
 
 
     
