@@ -10,5 +10,6 @@ function PetSave(~, ~, gui, OwnerInfo, PetName, PetBreed, PetAge, PetBehaviour, 
     age = str2double(Age);
 
     PetInfo = {Name, Breed, age, Behaviour, Gender, instructions};
-    SitterFinder(gui, OwnerInfo, PetInfo)
+    disp(PetInfo)
+    Matched(gui, OwnerInfo, PetInfo)
 end

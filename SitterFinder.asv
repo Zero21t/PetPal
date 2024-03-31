@@ -1,4 +1,4 @@
-function [matchNames, matchPhoneNumbers] = SitterFinder(ownerinfo, petinfo)
+function [matchFound, matchNames, matchPhoneNumbers] = SitterFinder(ownerinfo, petinfo)
     % Database connection parameters
     datasource = 'PetApp';   % Replace with your data source name
     username = 'App';        % Replace with your MySQL username
@@ -36,6 +36,7 @@ function [matchNames, matchPhoneNumbers] = SitterFinder(ownerinfo, petinfo)
                 % Store the Name and PhoneNumber of the current match
                 matchNames{end+1} = rowinfo{j, 1};
                 matchPhoneNumbers{end+1} = rowinfo{j, 2};
+                
                 % Continue searching for more matches
             end
         end
@@ -43,12 +44,14 @@ function [matchNames, matchPhoneNumbers] = SitterFinder(ownerinfo, petinfo)
 
     % Display the Names and PhoneNumbers of all matches, if found
     if ~isempty(matchNames)
+        matchFound =true;
         disp('Matches found:');
         for k = 1:length(matchNames)
             disp(['Match ', num2str(k), ' Name: ', matchNames{k}]);
             disp(['Match ', num2str(k), ' PhoneNumber: ', matchPhoneNumbers{k}]);
         end
     else
+        
         disp('No match found.');
     end
 end
