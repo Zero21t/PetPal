@@ -32,7 +32,7 @@ function Matched(gui, OwnerInfo, PetInfo)
         'String', 'Accept', ...
         'Units', 'normalized', ...
         'Position', [0.25, 0.2, 0.2, 0.1], ...
-        'Callback', {@AcceptMatchCallback, currentMatchIndex});
+        'Callback', @AcceptMatchCallback);
 
     DeclineButton = uicontrol(gui, 'Style', 'pushbutton', ...
         'String', 'Decline', ...
@@ -42,7 +42,7 @@ function Matched(gui, OwnerInfo, PetInfo)
 
     updateMatchDisplay();
 
-    function AcceptMatchCallback(hObject, eventdata, currentMatchIndex)
+    function AcceptMatchCallback(hObject, eventdata)
         % Remove buttons
         delete(AcceptButton);
         delete(DeclineButton);
@@ -55,7 +55,8 @@ function Matched(gui, OwnerInfo, PetInfo)
             'FontWeight', 'bold', ...
             'Units', 'normalized', ...
             'Position', [0.25, 0.5, 0.5, 0.1]);
-        disp("Matched attempts: "+ currentMatchIndex)
+        number = currentMatchIndex;
+        disp("attempts: "+number)
     end
 
     function DeclineMatchCallback(hObject, eventdata)
